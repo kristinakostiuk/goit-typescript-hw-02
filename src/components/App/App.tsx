@@ -6,15 +6,8 @@ import Loader from '../Loader/Loader';
 import toast, { Toaster } from 'react-hot-toast';
 import LoadMoreBtn from '../LoadmoreBtn/LoadmoreBtn';
 import ImageModal from '../ImageModal/ImageModal';
+import { Photo } from '../../types';
 
-interface Photo {
-  id: string;
-  urls: {
-    small: string;
-    regular: string;
-  };
-  alt_description: string;
-}
 
 export default function App() {
   const [photos, setPhotos] = useState<Photo[]>([]);

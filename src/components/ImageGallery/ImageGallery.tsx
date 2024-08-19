@@ -1,16 +1,10 @@
 import { useRef, useEffect } from 'react';
 import ImageCard from '../ImageCard/ImageCard';
 import css from './ImageGallery.module.css';
+import { Photo } from '../../types';
 
 interface ImageGalleryProps {
-  items: {
-    id: string;
-    urls: {
-      regular: string;
-      small: string;
-    };
-    alt_description: string;
-  }[];
+  items: Photo[],
   onImageClick: (imageUrl: string) => void;
 }
 

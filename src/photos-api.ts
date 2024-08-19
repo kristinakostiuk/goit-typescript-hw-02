@@ -1,20 +1,14 @@
 import axios from "axios";
+import { Photo } from "./types";
 
 axios.defaults.baseURL = 'https://api.unsplash.com'
 
 interface FetchPhotosResponse {
-  results: {
-    id: string;
-    urls: {
-      small: string;
-      regular: string;
-    };
-    alt_description: string;
-  }[];
-}
+  results: Photo[];
+};
 
 export const fetchPhotos = async (query:string, currentPage:number) => {
-  const response = await axios.get("/search/photos",
+  const response = await axios.get<FetchPhotosResponse>("/search/photos",
     {
     params: {
         query,

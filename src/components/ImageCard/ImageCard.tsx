@@ -1,12 +1,8 @@
 import css from './ImageCard.module.css';
+import { Photo } from '../../types';
 
 interface ImageCardProps {
-  data: {
-    urls: {
-      small: string;
-    };
-    alt_description: string;
-  };
+  data: Omit<Photo, 'id' | 'urls.regular'>
 }
 
 export default function ImageCard({ data }: ImageCardProps ) {
